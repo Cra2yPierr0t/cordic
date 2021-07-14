@@ -17,6 +17,10 @@ CORDICで実装したsinを即座に計算して100倍して8bitで出力して�
 ```SystemVerilog
 module test_module (...);
 
+    logic [7:0] kakudo, du_ty;
+
+    // 様々なコード
+
     sin_pwm sin(
         .theta( kakudo ),
         .duty( du_ty )
@@ -25,7 +29,7 @@ module test_module (...);
 endmodule
 ```
 
-以下を実行すると0~180を入力した時のシミュレーションを見られる
+以下を実行すると0°~180°を入力した時のシミュレーションを見られる
 ```
 make ; make run
 ``` 
