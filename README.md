@@ -1,19 +1,18 @@
 # CORDIC sin_pwm
 
-CORDIC$B$G<BAu$7$?(Bsin$B$N7W;;$9$k$d$D(B
+CORDICで実装したsinを即座に計算して100倍して8bitで出力してくれるやつ
 ![kekka](chart.png)
 
 ## Features
 
-* sin_pwm.sv$B$,K\BN(B
-* $BF~NO(B8bit, $B=PNO(B8bit
-* $BF~NO$O(B0~180$B!k$^$GBP1~!"=PNO$H$7$F(Bsin(input) * 100$B$rJV$9(B
-* $BAH$_9g$o$;2sO)$@$1$G<BAu$7$F$k$N$GF~NO8eB(:B$K=PNO$,7h$^$k(B
-* 181$B!k0J>e$rF~NO$9$k$H;`$L(B
+* sin_pwm.svが本体
+* 入力8bit, 出力8bit
+* 0°~180°まで対応
+* 181°以上を入力したら死ぬ
 
 ## usage
 
-$B$3$s$J46$8$G;H$C$F$b$m$F(B
+こんな感じで使ってもろて
 
 ```SystemVerilog
 module test_module (...);
@@ -26,7 +25,7 @@ module test_module (...);
 endmodule
 ```
 
+以下を実行すると0~180を入力した時のシミュレーションを見られる
 ```
 make ; make run
 ``` 
-$B$G(B 0~180$B!k$rF~NO$7$?;~$N%7%_%e%l!<%7%g%s$,8+$i$l$k(B
